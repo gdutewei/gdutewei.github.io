@@ -20,10 +20,23 @@
 <body>
 
     <zrb-resume></zrb-resume>
-
+    <audio id="myAudio" src="mp3/那些你很冒险的梦-陈颖恩.mp3" autoplay loop hidden></audio>
+    <script>
+        window.onload = function() {
+            var isPlay = true
+            var audio = document.getElementById('myAudio')
+            document.body.addEventListener('dblclick', function (){
+                if (isPlay) {
+                    audio.pause()
+                } else {
+                    audio.play()
+                }
+                isPlay = !isPlay
+            }, false)
+        }
+    </script>
     <script src="js/lib.js"></script>
     <script src="js/basis.js"></script>
-
     <script>
         angular.bootstrap(document, ["bootstrap"]);
     </script>
