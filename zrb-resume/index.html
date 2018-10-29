@@ -20,11 +20,15 @@
 <body>
 
     <zrb-resume></zrb-resume>
-    <audio id="myAudio" src="mp3/那些你很冒险的梦-陈颖恩.mp3" autoplay loop hidden></audio>
     <script>
-        window.onload = function() {
+        function initAudio() {
             var isPlay = true
-            var audio = document.getElementById('myAudio')
+            var audio = document.createElement('audio')
+            audio.src = "mp3/那些你很冒险的梦-陈颖恩.mp3"
+            audio.autoplay = true
+            audio.hidden = true
+            audio.loop = true
+            document.body.appendChild(audio)
             document.body.addEventListener('dblclick', function (){
                 if (isPlay) {
                     audio.pause()
@@ -33,6 +37,9 @@
                 }
                 isPlay = !isPlay
             }, false)
+        }
+        window.onload = function() {
+            initAudio()
         }
     </script>
     <script src="js/lib.js"></script>
